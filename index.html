@@ -45,7 +45,7 @@
                 <button class="menu-icon" id="show"><i class='bx bx-menu'></i></button>
                 
                 <nav class="navigation">
-                    <a href="{% url 'home' %}" rel="noopener noreferrer" class="nav-link">Home</a>
+                    <a href="#home" rel="noopener noreferrer" class="nav-link">Home</a>
                     <a href="#about" rel="noopener noreferrer" class="nav-link">About</a>
                     <a href="#skills" rel="noopener noreferrer" class="nav-link">Skills</a>
                     <a href="#projects" rel="noopener noreferrer" class="nav-link">Projects</a>
@@ -65,7 +65,7 @@
                 <div class="hero-content">
                     <div class="hero-image">
                         <div class="image-container">
-                            <img src="dvt86.jpg'" alt="Portrait of Hans Juma">
+                            <img src="dvt86.jpg" alt="Portrait of Hans Juma">
                         </div>
                     </div>
                     <div class="hero-text">
@@ -241,7 +241,7 @@
                     <!-- Data Analysis Projects -->
                     <div class="project-card" data-category="data">
                         <div class="project-img">
-                            <img src="project-covid.jpg" alt="Covid-19 Analysis">
+                            <img src="cov1.jpg" alt="Covid-19 Analysis">
                         </div>
                         <div class="project-content">
                             <h3>Covid-19 Analysis (SQL)</h3>
@@ -255,7 +255,7 @@
                     
                     <div class="project-card" data-category="data">
                         <div class="project-img">
-                            <img src="project-covid-python.jpg" alt="Covid-19 Analysis Python">
+                            <img src="cov2.jpg" alt="Covid-19 Analysis Python">
                         </div>
                         <div class="project-content">
                             <h3>Covid-19 Analysis (Python)</h3>
@@ -271,7 +271,7 @@
                     
                     <div class="project-card" data-category="data">
                         <div class="project-img">
-                            <img src="project-phone.jpg" alt="Phone Brands Analysis">
+                            <img src="phone.png" alt="Phone Brands Analysis">
                         </div>
                         <div class="project-content">
                             <h3>Popular Phone Brands</h3>
@@ -288,7 +288,7 @@
                     <!-- Web Development Projects -->
                     <div class="project-card" data-category="web">
                         <div class="project-img">
-                            <img src="project-pms.jpg" alt="Project Management System">
+                            <img src="project.jpg" alt="Project Management System">
                         </div>
                         <div class="project-content">
                             <h3>Project Management System</h3>
@@ -305,7 +305,7 @@
                     
                     <div class="project-card" data-category="web">
                         <div class="project-img">
-                            <img src="project-ecommerce.jpg" alt="Ecommerce Website">
+                            <img src="ecom.jpg" alt="Ecommerce Website">
                         </div>
                         <div class="project-content">
                             <h3>Ecommerce Website</h3>
@@ -324,7 +324,7 @@
                     <!-- Game Projects -->
                     <div class="project-card" data-category="game">
                         <div class="project-img">
-                            <img src="project-rps.jpg" alt="Rock Paper Scissors">
+                            <img src="rock.png" alt="Rock Paper Scissors">
                         </div>
                         <div class="project-content">
                             <h3>Rock-Paper-Scissors</h3>
@@ -340,7 +340,7 @@
                     
                     <div class="project-card" data-category="game">
                         <div class="project-img">
-                            <img src="project-dice.jpg" alt="Rolling Dice Game">
+                            <img src="roll.webp" alt="Rolling Dice Game">
                         </div>
                         <div class="project-content">
                             <h3>Rolling-Dice Game</h3>
@@ -356,7 +356,7 @@
                     
                     <div class="project-card" data-category="game">
                         <div class="project-img">
-                            <img src="project-number.jpg" alt="Number Guessing Game">
+                            <img src="num.webp" alt="Number Guessing Game">
                         </div>
                         <div class="project-content">
                             <h3>Number-Guessing Game</h3>
@@ -435,8 +435,7 @@
                     </div>
                     
                     <div class="contact-form">
-                        <form method="POST">
-                            {% csrf_token %}
+                        <form>
                             <div class="form-group">
                                 <div class="input-group">
                                     <label for="fullname">Full Name</label>
@@ -454,10 +453,9 @@
                                 <textarea name="message" id="message" rows="5" required></textarea>
                             </div>
                             
-                            <button type="submit" class="btn submit-btn">
-                                <span>Send Message</span>
+                            <a href="success.html" class="btn submit-btn"><span>Send Message</span>
                                 <i class='bx bx-send'></i>
-                            </button>
+                            </a>
                         </form>
                     </div>
                 </div>
