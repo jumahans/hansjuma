@@ -22,6 +22,8 @@ document.addEventListener('DOMContentLoaded', () => {
     setupProjectFilters();
     setupNavigation();
     setupScrollAnimation();
+    // Initial call to show animations on page load
+    animateOnScroll();
 });
 
 function initializedSlides() {
@@ -37,11 +39,9 @@ function showSlides(index) {
     } else if (index < 0) {
         slideindex = slides.length - 1;
     }
-
     slides.forEach(slide => {
         slide.classList.remove('displayslides');
     });
-
     slides[slideindex].classList.add('displayslides');
 }
 
@@ -177,67 +177,74 @@ function setupScrollAnimation() {
     const sections = document.querySelectorAll('section');
     const navLinks = document.querySelectorAll('.nav-link');
     
+    // Use throttling to improve scroll performance
+    let scrollTimeout;
+    
     window.addEventListener('scroll', () => {
-        let current = '';
+        if (scrollTimeout) {
+            window.cancelAnimationFrame(scrollTimeout);
+        }
         
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop;
-            const sectionHeight = section.clientHeight;
+        scrollTimeout = window.requestAnimationFrame(() => {
+            let current = '';
             
-            if (pageYOffset >= sectionTop - 200) {
-                current = section.getAttribute('id');
-            }
-        });
-        
-        navLinks.forEach(link => {
-            link.classList.remove('active');
-            if (link.getAttribute('href').includes(current)) {
-                link.classList.add('active');
-            }
-        });
-        
-        // Add animation to elements when they come into view
-        const animateElements = document.querySelectorAll('.animate-on-scroll');
-        animateElements.forEach(element => {
-            const elementPosition = element.getBoundingClientRect().top;
-            const screenPosition = window.innerHeight / 1.3;
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                
+                if (pageYOffset >= sectionTop - 200) {
+                    current = section.getAttribute('id');
+                }
+            });
             
-            if (elementPosition < screenPosition) {
-                element.classList.add('animate');
-            }
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').includes(current)) {
+                    link.classList.add('active');
+                }
+            });
+            
+            // Call the separate animation function
+            animateOnScroll();
         });
     });
 }
 
-
 // Page transition effect
 function createPageTransition() {
+    // Remove any existing transitions first
+    const existingTransition = document.querySelector('.page-transition');
+    if (existingTransition) {
+        document.body.removeChild(existingTransition);
+    }
+    
     const transition = document.createElement('div');
     transition.className = 'page-transition';
     document.body.appendChild(transition);
     
-    setTimeout(() => {
-        document.body.removeChild(transition);
-    }, 1000);
+    return new Promise(resolve => {
+        setTimeout(() => {
+            document.body.removeChild(transition);
+            resolve();
+        }, 1000);
+    });
 }
 
 // Trigger transition when clicking on navigation links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
+    anchor.addEventListener('click', async function(e) {
         e.preventDefault();
         
-        createPageTransition();
+        await createPageTransition();
         
-        setTimeout(() => {
-            const targetId = this.getAttribute('href');
-            const targetElement = document.querySelector(targetId);
-            
-            if (targetElement) {
-                targetElement.scrollIntoView({
-                    behavior: 'smooth'
-                });
-            }
-        }, 500);
+        const targetId = this.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+        
+        if (targetElement) {
+            targetElement.scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
     });
 });
 
@@ -255,5 +262,5 @@ const animateOnScroll = () => {
     });
 };
 
-window.addEventListener('scroll', animateOnScroll);
-window.addEventListener('load', animateOnScroll);
+// No need for separate event listeners as this is called from setupScrollAnimation
+// and on DOMContentLoaded
