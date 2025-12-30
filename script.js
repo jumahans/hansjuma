@@ -1,4 +1,180 @@
-// Custom cursor
+// ===== PROJECT DATA =====
+const projectData = {
+    'Covid-19 Analysis (SQL)': {
+        image: 'cov1.jpg',
+        title: 'Covid-19 Analysis (SQL)',
+        description: 'Comprehensive data analysis of Covid-19 global statistics using advanced SQL queries. This project involves extracting, transforming, and analyzing pandemic data to uncover meaningful insights about infection rates, mortality rates, and vaccination progress across different countries and continents.',
+        tools: ['SQL', 'PostgreSQL', 'Data Analysis'],
+        features: [
+            'Complex SQL queries for data extraction and transformation',
+            'Statistical analysis of infection and death rates',
+            'Comparative analysis across countries and continents',
+            'Time series analysis of pandemic progression',
+            'Calculation of vaccination percentages and trends',
+            'Data aggregation and window functions'
+        ],
+        github: 'https://github.com/jumahans/covid-analysis-with-sql',
+        live: null
+    },
+    'Covid-19 Analysis (Python)': {
+        image: 'cov2.jpg',
+        title: 'Covid-19 Analysis (Python)',
+        description: 'In-depth Python-based analysis of Covid-19 data featuring data visualization, statistical modeling, and predictive analytics. Utilizes powerful Python libraries to process large datasets and create insightful visualizations that tell the story of the pandemic.',
+        tools: ['Python', 'Pandas', 'Numpy', 'Matplotlib', 'Seaborn'],
+        features: [
+            'Data cleaning and preprocessing of raw Covid-19 datasets',
+            'Interactive visualizations using Matplotlib and Seaborn',
+            'Statistical analysis and trend identification',
+            'Geographic data visualization with heatmaps',
+            'Time series forecasting and predictions',
+            'Comparative analysis of different regions'
+        ],
+        github: 'https://github.com/jumahans/covid-analysis-with-python',
+        live: null
+    },
+    'Popular Phone Brands': {
+        image: 'phone.png',
+        title: 'Popular Phone Brands Analysis',
+        description: 'Market analysis project examining the popularity and trends of various phone brands. This project leverages data analytics to understand consumer preferences, market share distribution, and brand performance metrics across different segments.',
+        tools: ['Python', 'Pandas', 'Numpy', 'Matplotlib', 'Data Visualization'],
+        features: [
+            'Market share analysis of leading phone brands',
+            'Consumer preference trend analysis',
+            'Price point comparison across brands',
+            'Feature-based competitive analysis',
+            'Visual representations with charts and graphs',
+            'Data-driven insights for market positioning'
+        ],
+        github: 'https://github.com/jumahans/popular_phone_brands.',
+        live: null
+    },
+    'Project Management System': {
+        image: 'project.jpg',
+        title: 'Project Management System',
+        description: 'A comprehensive web-based project management solution built with Django. This system enables teams to efficiently plan, track, and manage projects with features like task assignment, progress monitoring, team collaboration, and resource allocation.',
+        tools: ['Django', 'Python', 'HTML', 'CSS', 'JavaScript', 'Bootstrap', 'SQLite'],
+        features: [
+            'User authentication and role-based access control',
+            'Project creation and management dashboard',
+            'Task assignment and tracking system',
+            'Team collaboration and communication tools',
+            'Progress visualization with charts and timelines',
+            'File upload and document management',
+            'Notification system for task updates',
+            'Responsive design for mobile and desktop'
+        ],
+        github: 'https://github.com/jumahans/Product-management-system',
+        live: null
+    },
+    'Ecommerce Website': {
+        image: 'ecom.jpg',
+        title: 'Ecommerce Website',
+        description: 'A full-featured online shopping platform built with Django, offering a complete ecommerce experience. This project includes product catalog management, shopping cart functionality, secure payment processing, and order management system.',
+        tools: ['Django', 'Python', 'HTML', 'CSS', 'JavaScript', 'Bootstrap', 'SQLite', 'Payment Gateway'],
+        features: [
+            'User registration and authentication system',
+            'Product catalog with categories and search',
+            'Shopping cart and wishlist functionality',
+            'Secure checkout and payment processing',
+            'Order tracking and management',
+            'Admin panel for inventory management',
+            'Customer reviews and ratings',
+            'Responsive design optimized for all devices'
+        ],
+        github: 'https://github.com/jumahans/Ecommerce-Web-App',
+        live: null
+    },
+    'Data Analytical Web App': {
+        image: 'data.png',
+        title: 'Data Analytical Web App',
+        description: 'A sophisticated web-based analytical tool designed for professionals and researchers. This application provides comprehensive data cleaning, transformation, visualization, and report generation capabilities, making data analysis accessible and efficient.',
+        tools: ['Django', 'Python', 'HTML', 'CSS', 'JavaScript', 'Pandas', 'Plotly', 'Chart.js'],
+        features: [
+            'CSV and Excel file upload and processing',
+            'Automated data cleaning and preprocessing',
+            'Interactive data visualization dashboards',
+            'Statistical analysis and summary statistics',
+            'Custom report generation with export options',
+            'Data filtering and transformation tools',
+            'Multiple chart types and visualization options',
+            'User-friendly interface for non-technical users'
+        ],
+        github: 'https://github.com/jumahans/Data-Analysis-Web-App',
+        live: null
+    },
+    'OpenAI Chatbot': {
+        image: 'ai.png',
+        title: 'OpenAI Chatbot',
+        description: 'An intelligent conversational AI chatbot powered by OpenAI APIs. This application provides real-time conversational support with capabilities for data analysis, insights generation, and natural language processing, offering users an interactive and intelligent assistant.',
+        tools: ['Django', 'React', 'OpenAI API', 'CSS', 'Tailwind CSS', 'REST API', 'WebSockets'],
+        features: [
+            'Real-time conversational AI interface',
+            'Integration with OpenAI GPT models',
+            'Context-aware responses and conversation memory',
+            'Data analysis and insights generation',
+            'Natural language query processing',
+            'Modern React-based user interface',
+            'Responsive design with Tailwind CSS',
+            'Conversation history and session management'
+        ],
+        github: 'https://github.com/jumahans/OPENAI--CHATBOT',
+        live: null
+    },
+    'Rock-Paper-Scissors': {
+        image: 'rock.png',
+        title: 'Rock-Paper-Scissors Game',
+        description: 'A modern take on the classic Rock-Paper-Scissors game with an engaging user interface and smooth animations. This interactive game features score tracking, game statistics, and an intelligent computer opponent.',
+        tools: ['HTML', 'CSS', 'JavaScript', 'Game Logic'],
+        features: [
+            'Interactive gameplay with smooth animations',
+            'Score tracking and win/loss statistics',
+            'Computer AI opponent with random selection',
+            'Responsive design for all screen sizes',
+            'Sound effects and visual feedback',
+            'Round history tracking',
+            'Modern and intuitive user interface'
+        ],
+        github: 'https://github.com/jumahans/Rock-paper-scissors',
+        live: null
+    },
+    'Rolling-Dice Game': {
+        image: 'roll.webp',
+        title: 'Rolling-Dice Game',
+        description: 'An interactive dice rolling game featuring realistic animations and multiplayer gameplay. Players take turns rolling dice to accumulate points, with strategic elements that make each game exciting and unpredictable.',
+        tools: ['HTML', 'CSS', 'JavaScript', 'Animation'],
+        features: [
+            'Realistic dice rolling animations',
+            'Two-player turn-based gameplay',
+            'Score accumulation and tracking',
+            'Strategic "hold" and "roll" mechanics',
+            'Visual feedback for game events',
+            'Winning conditions and game restart',
+            'Responsive layout for mobile and desktop'
+        ],
+        github: 'https://github.com/jumahans/Rolling-Dice',
+        live: null
+    },
+    'Number-Guessing Game': {
+        image: 'num.webp',
+        title: 'Number-Guessing Game',
+        description: 'A fun and challenging number guessing game built with Django and JavaScript. Players attempt to guess a randomly generated number within a limited number of tries, with hints provided after each guess to guide them toward the correct answer.',
+        tools: ['Django', 'Python', 'HTML', 'CSS', 'JavaScript'],
+        features: [
+            'Random number generation algorithm',
+            'Hint system (higher/lower feedback)',
+            'Limited attempts with difficulty levels',
+            'Score tracking and best score recording',
+            'Multiple difficulty settings',
+            'Game statistics and analytics',
+            'Responsive and engaging UI',
+            'Sound effects for correct/incorrect guesses'
+        ],
+        github: 'https://github.com/jumahans/Number-guessing-game',
+        live: null
+    }
+};
+
+// ===== CUSTOM CURSOR =====
 const cursor = document.querySelector('.cursor');
 const cursorFollower = document.querySelector('.cursor-follower');
 
@@ -12,19 +188,20 @@ document.addEventListener('mousemove', (e) => {
     }, 100);
 });
 
-// Skills slider
+// Add hover effect on clickable elements
+const clickableElements = document.querySelectorAll('a, button, .project-card');
+clickableElements.forEach(el => {
+    el.addEventListener('mouseenter', () => {
+        cursor.classList.add('expand');
+    });
+    el.addEventListener('mouseleave', () => {
+        cursor.classList.remove('expand');
+    });
+});
+
+// ===== SKILLS SLIDER =====
 const slides = document.querySelectorAll('.slides .show');
 let slideindex = 0;
-
-document.addEventListener('DOMContentLoaded', () => {
-    initializedSlides();
-    setupTextAnimation();
-    setupProjectFilters();
-    setupNavigation();
-    setupScrollAnimation();
-    // Initial call to show animations on page load
-    animateOnScroll();
-});
 
 function initializedSlides() {
     if (slides.length > 0) {
@@ -55,7 +232,7 @@ function nextSlides() {
     showSlides(slideindex);
 }
 
-// Text animation for hero section
+// ===== TEXT ANIMATION =====
 function setupTextAnimation() {
     const textAnimation = document.querySelector('.text-animation span');
     if (!textAnimation) return;
@@ -81,11 +258,11 @@ function setupTextAnimation() {
         
         if (!isDeleting && charIndex === currentRole.length) {
             isDeleting = true;
-            typingSpeed = 1500; // Pause at the end
+            typingSpeed = 1500;
         } else if (isDeleting && charIndex === 0) {
             isDeleting = false;
             roleIndex = (roleIndex + 1) % roles.length;
-            typingSpeed = 500; // Pause before typing next word
+            typingSpeed = 500;
         }
         
         setTimeout(typeText, typingSpeed);
@@ -94,7 +271,7 @@ function setupTextAnimation() {
     typeText();
 }
 
-// Project filters
+// ===== PROJECT FILTERS =====
 function setupProjectFilters() {
     const filterBtns = document.querySelectorAll('.filter-btn');
     const projectCards = document.querySelectorAll('.project-card');
@@ -103,9 +280,7 @@ function setupProjectFilters() {
     
     filterBtns.forEach(btn => {
         btn.addEventListener('click', () => {
-            // Remove active class from all buttons
             filterBtns.forEach(b => b.classList.remove('active'));
-            // Add active class to clicked button
             btn.classList.add('active');
             
             const filter = btn.getAttribute('data-filter');
@@ -114,10 +289,12 @@ function setupProjectFilters() {
                 if (filter === 'all' || card.getAttribute('data-category') === filter) {
                     card.style.display = 'block';
                     setTimeout(() => {
-                        card.classList.add('show');
+                        card.style.opacity = '1';
+                        card.style.transform = 'translateY(0)';
                     }, 100);
                 } else {
-                    card.classList.remove('show');
+                    card.style.opacity = '0';
+                    card.style.transform = 'translateY(20px)';
                     setTimeout(() => {
                         card.style.display = 'none';
                     }, 300);
@@ -127,23 +304,94 @@ function setupProjectFilters() {
     });
 }
 
-// Mobile navigation
+// ===== PROJECT MODAL =====
+function setupProjectModal() {
+    const modal = document.getElementById('projectModal');
+    const modalClose = document.querySelector('.modal-close');
+    const projectCards = document.querySelectorAll('.project-card');
+    
+    projectCards.forEach(card => {
+        card.addEventListener('click', () => {
+            const title = card.querySelector('h3').textContent;
+            const data = projectData[title];
+            
+            if (data) {
+                document.getElementById('modalImage').src = data.image;
+                document.getElementById('modalTitle').textContent = data.title;
+                document.getElementById('modalDescription').textContent = data.description;
+                
+                // Tools
+                const toolsList = document.getElementById('modalTools');
+                toolsList.innerHTML = '';
+                data.tools.forEach(tool => {
+                    const span = document.createElement('span');
+                    span.textContent = tool;
+                    toolsList.appendChild(span);
+                });
+                
+                // Features
+                const featuresList = document.getElementById('modalFeatures');
+                featuresList.innerHTML = '';
+                data.features.forEach(feature => {
+                    const li = document.createElement('li');
+                    li.textContent = feature;
+                    featuresList.appendChild(li);
+                });
+                
+                // Links
+                document.getElementById('modalGithubLink').href = data.github;
+                const liveLink = document.getElementById('modalLiveLink');
+                if (data.live) {
+                    liveLink.href = data.live;
+                    liveLink.style.display = 'inline-flex';
+                } else {
+                    liveLink.style.display = 'none';
+                }
+                
+                modal.classList.add('show');
+                document.body.style.overflow = 'hidden';
+            }
+        });
+    });
+    
+    // Close modal
+    modalClose.addEventListener('click', () => {
+        modal.classList.remove('show');
+        document.body.style.overflow = 'auto';
+    });
+    
+    // Close on outside click
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            modal.classList.remove('show');
+            document.body.style.overflow = 'auto';
+        }
+    });
+    
+    // Close on escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal.classList.contains('show')) {
+            modal.classList.remove('show');
+            document.body.style.overflow = 'auto';
+        }
+    });
+}
+
+// ===== MOBILE NAVIGATION =====
 function setupNavigation() {
     const show = document.getElementById('show');
     const navigation = document.querySelector('.navigation');
     
     if (!show || !navigation) return;
     
-    // Initial state based on screen size
     function updateNavigationDisplay() {
-        if (window.innerWidth <= 767) {
+        if (window.innerWidth <= 768) {
             navigation.classList.remove('active');
         } else {
             navigation.classList.add('active');
         }
     }
     
-    // Toggle navigation on menu button click
     show.addEventListener('click', () => {
         navigation.classList.toggle('active');
         
@@ -154,33 +402,36 @@ function setupNavigation() {
         }
     });
     
-    // Close navigation when clicking a link (mobile only)
     const navLinks = document.querySelectorAll('.nav-link');
     navLinks.forEach(link => {
         link.addEventListener('click', () => {
-            if (window.innerWidth <= 767) {
+            if (window.innerWidth <= 768) {
                 navigation.classList.remove('active');
                 show.innerHTML = '<i class="bx bx-menu"></i>';
             }
         });
     });
     
-    // Update on resize
     window.addEventListener('resize', updateNavigationDisplay);
-    
-    // Initial setup
     updateNavigationDisplay();
 }
 
-// Scroll animations
+// ===== SCROLL ANIMATIONS =====
 function setupScrollAnimation() {
     const sections = document.querySelectorAll('section');
     const navLinks = document.querySelectorAll('.nav-link');
+    const header = document.querySelector('.header');
     
-    // Use throttling to improve scroll performance
     let scrollTimeout;
     
     window.addEventListener('scroll', () => {
+        // Header scroll effect
+        if (window.scrollY > 100) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+        
         if (scrollTimeout) {
             window.cancelAnimationFrame(scrollTimeout);
         }
@@ -204,51 +455,12 @@ function setupScrollAnimation() {
                 }
             });
             
-            // Call the separate animation function
             animateOnScroll();
         });
     });
 }
 
-// Page transition effect
-function createPageTransition() {
-    // Remove any existing transitions first
-    const existingTransition = document.querySelector('.page-transition');
-    if (existingTransition) {
-        document.body.removeChild(existingTransition);
-    }
-    
-    const transition = document.createElement('div');
-    transition.className = 'page-transition';
-    document.body.appendChild(transition);
-    
-    return new Promise(resolve => {
-        setTimeout(() => {
-            document.body.removeChild(transition);
-            resolve();
-        }, 1000);
-    });
-}
-
-// Trigger transition when clicking on navigation links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', async function(e) {
-        e.preventDefault();
-        
-        await createPageTransition();
-        
-        const targetId = this.getAttribute('href');
-        const targetElement = document.querySelector(targetId);
-        
-        if (targetElement) {
-            targetElement.scrollIntoView({
-                behavior: 'smooth'
-            });
-        }
-    });
-});
-
-// Animate elements when they come into view
+// ===== ANIMATE ON SCROLL =====
 const animateOnScroll = () => {
     const elements = document.querySelectorAll('.animate-on-scroll');
     
@@ -262,5 +474,91 @@ const animateOnScroll = () => {
     });
 };
 
-// No need for separate event listeners as this is called from setupScrollAnimation
-// and on DOMContentLoaded
+// ===== SMOOTH SCROLL =====
+function setupSmoothScroll() {
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            const targetId = this.getAttribute('href');
+            if (targetId === '#') return;
+            
+            const targetElement = document.querySelector(targetId);
+            
+            if (targetElement) {
+                targetElement.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+}
+
+// ===== FORM HANDLING =====
+function setupFormHandling() {
+    const form = document.querySelector('.contact-form form');
+    
+    if (form) {
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            const formData = new FormData(form);
+            const data = Object.fromEntries(formData);
+            
+            // Here you would typically send the data to a server
+            console.log('Form submitted:', data);
+            
+            // Show success message
+            alert('Thank you for your message! I will get back to you soon.');
+            form.reset();
+        });
+    }
+}
+
+// ===== INITIALIZE ON DOM LOAD =====
+document.addEventListener('DOMContentLoaded', () => {
+    initializedSlides();
+    setupTextAnimation();
+    setupProjectFilters();
+    setupProjectModal();
+    setupNavigation();
+    setupScrollAnimation();
+    setupSmoothScroll();
+    setupFormHandling();
+    animateOnScroll();
+});
+
+// ===== PERFORMANCE OPTIMIZATION =====
+// Debounce function for scroll events
+function debounce(func, wait) {
+    let timeout;
+    return function executedFunction(...args) {
+        const later = () => {
+            clearTimeout(timeout);
+            func(...args);
+        };
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+    };
+}
+
+// Add lazy loading for images
+if ('IntersectionObserver' in window) {
+    const imageObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const img = entry.target;
+                if (img.dataset.src) {
+                    img.src = img.dataset.src;
+                    img.removeAttribute('data-src');
+                }
+                observer.unobserve(img);
+            }
+        });
+    });
+    
+    document.querySelectorAll('img[data-src]').forEach(img => {
+        imageObserver.observe(img);
+    });
+}
